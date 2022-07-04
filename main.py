@@ -7,7 +7,7 @@ def index():
 	return "Hello world"
 	
 @app.route('/cakes')
-def index():
+def cakes():
 	return "Hello cakes"
 
 if __name__ == '__main__':
