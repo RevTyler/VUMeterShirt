@@ -1,19 +1,15 @@
-import time
-import board
-import neopixel
+from flask import Flask
 
-pixels = neopixel.NeoPixel(board.D18, 5, brightness=0.5, pixel_order=neopixel.GRB)
+app = Flask(__name__)
 
-pixels[0] = (200, 0, 0)
-time.sleep(0.5)
-pixels[0] = (0, 200, 0)
-time.sleep(0.5)
-pixels[0] = (0, 0, 200)
-time.sleep(0.5)
-pixels[0] = (200, 200, 0)
-time.sleep(0.25)
-pixels[0] = (200, 0, 0)
-time.sleep(0.25)
-pixels[0] = (200, 200, 0)
-time.sleep(0.5)
-pixels.show()
+@app.route('/')
+def index():
+	return "Hello world"
+	
+@app.route('/cakes')
+def index():
+	return "Hello cakes"
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+	
